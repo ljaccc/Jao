@@ -263,35 +263,44 @@ class DataProcessor(object):
         return box_corner
 
     @staticmethod
+    # def decode_label_jxlpd(img_name):
+    #     filename, _ = os.path.splitext(img_name)
+    #     plist = filename.split('_')
+    #     bbox = plist[1:]
+    #     box = [[int(pt.split('&')[0]), int(pt.split('&')[1])] for pt in bbox]
+    #     box_corner = sum(box, [])
+    #     """
+    #     box_corner.append(0)
+    #     box_corner = np.array([box_corner])
+    #     """
+    #
+    #     #对垂直旋转的图片标注换位置
+    #     new_corner = []
+    #     for x in box_corner[6:8]:
+    #         new_corner.append(x)
+    #
+    #     for x in box_corner[10:12]:
+    #         new_corner.append(x)
+    #
+    #     for x in box_corner[6:12]:
+    #         new_corner.append(x)
+    #
+    #     for x in box_corner[4:6]:
+    #         new_corner.append(x)
+    #
+    #     new_corner.append(0)
+    #     new_corner = np.array([new_corner])
+    #
+    #     return new_corner
     def decode_label_jxlpd(img_name):
         filename, _ = os.path.splitext(img_name)
         plist = filename.split('_')
         bbox = plist[1:]
         box = [[int(pt.split('&')[0]), int(pt.split('&')[1])] for pt in bbox]
         box_corner = sum(box, [])
-        """
         box_corner.append(0)
         box_corner = np.array([box_corner])
-        """
-
-        #对垂直旋转的图片标注换位置
-        new_corner = []
-        for x in box_corner[6:8]:
-            new_corner.append(x)
-
-        for x in box_corner[10:12]:
-            new_corner.append(x)
-
-        for x in box_corner[6:12]:
-            new_corner.append(x)
-
-        for x in box_corner[4:6]:
-            new_corner.append(x)
-
-        new_corner.append(0)
-        new_corner = np.array([new_corner])
-
-        return new_corner
+        return box_corner
 
     @staticmethod
     def decode_lp(img_name):

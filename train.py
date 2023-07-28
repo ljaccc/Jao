@@ -1,14 +1,8 @@
 #!/user/bin/env python3
 # -*- coding: utf-8 -*-
-"""
-@Author: yjf
-@Create: 2022/7/27 20:23
-@Message: train for LPCDet_L
-"""
 
 import os
 import time
-
 from tqdm import tqdm
 import torch
 from torch.optim import lr_scheduler
