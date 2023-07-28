@@ -22,7 +22,6 @@ from utils.util import DataProcessor
 
 
 
-
 if __name__ == '__main__':
     # 文件夹路径
     folder_path = r'F:\6Model_deployment\LPCDet_L\data\outs'
